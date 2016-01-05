@@ -1,18 +1,24 @@
 
 public class Funnel: GroupOperation {
     public var steps: [NSOperation]
+    public var delegate: FunnelDelegate?
+    public var coordinator: FunnelCompletionCoordinator?
     
     private var context: UIViewController?
     private var navigationController: UINavigationController?
     
-    public init(funnelSteps: [FunnelStep], context: UIViewController? = nil) {
+    public init<T: FunnelCompletionCoordinator>(coordinatorType: T.Type, funnelSteps: [FunnelStep], context: UIViewController? = nil) {
         self.context = context ?? UIApplication.sharedApplication().keyWindow?.rootViewController
         
         steps = funnelSteps
         steps.append(NSBlockOperation(block: {}))
         
-        for (index, step) in steps.enumerate() where step !== steps.first! {
-            step.addDependency(funnelSteps[index - 1])
+        for (index, step) in steps.flatMap({$0 as? FunnelStep}).enumerate() {
+            if index == 0 {
+                step.coordinator = coordinatorType.init()
+            } else {
+                step.addDependency(funnelSteps[index - 1])
+            }
         }
         
         super.init(operations: steps)
@@ -20,20 +26,31 @@ public class Funnel: GroupOperation {
     
     public override func finish(errors: [NSError] = []) {
         executeOnMainThread {
-            self.context?.dismissViewControllerAnimated(true, completion: { super.finish(errors) })
+            self.context?.dismissViewControllerAnimated(true) {
+                self.delegate?.funnel(self,
+                    didCompleteWithCoordinatorOutput: self.coordinator?.generateOutput(),
+                    errors: errors
+                )
+                super.finish(errors)
+            }
         }
     }
     
     public override func execute() {
         super.execute()
         
-        guard let root = steps.flatMap({ $0 as? FunnelStep }).first?.viewController else {
-            finish()
-            return
+        guard
+            let firstStep = steps.flatMap({$0 as? FunnelStep }).first,
+            let root = firstStep.viewController
+            else {
+                finish()
+                return
         }
         
         navigationController = UINavigationController(rootViewController: root)
         context?.presentViewController(navigationController!, animated: true, completion: nil)
+        
+        delegate?.funnel(self, didStartStep: firstStep)
     }
     
     public override func operationDidFinish(operation: NSOperation, withErrors errors: [NSError]) {
@@ -41,6 +58,9 @@ public class Funnel: GroupOperation {
             finish(errors)
             return
         }
+        
+        delegate?.funnel(self, didCompleteStep: step)
+        coordinator = step.coordinator
         
         guard let nextIndex = steps.indexOf(step)?.successor() where nextIndex < steps.count - 1 else {
             finish()
@@ -52,9 +72,13 @@ public class Funnel: GroupOperation {
             return
         }
         
-        nextStep.coordinator = step.coordinator
+        nextStep.coordinator = coordinator
+        
         if nextStep.viewController != nil {
             navigationController?.pushViewController(nextStep.viewController!, animated: true)
+            delegate?.funnel(self, didStartStep: nextStep)
+        } else {
+            finish()
         }
     }
 }

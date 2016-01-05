@@ -35,3 +35,9 @@ extension FunnelStep: FunnelStepBaseDelegate {
         finish()
     }
 }
+
+extension FunnelStep {
+    override public var description: String {
+        return "\(self.dynamicType)"
+    }
+}

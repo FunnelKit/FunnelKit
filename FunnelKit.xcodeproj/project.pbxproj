@@ -7,9 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DF53D7FC1C3B93C400DB457E /* FunnelCompletionCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF53D7FB1C3B93C400DB457E /* FunnelCompletionCoordinator.swift */; };
+		DF53D8041C3B984600DB457E /* FunnelDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF53D8031C3B984600DB457E /* FunnelDelegate.swift */; };
 		DFDF43C71C3B3FC400F75060 /* FunnelKit.h in Headers */ = {isa = PBXBuildFile; fileRef = DFDF43C61C3B3FC400F75060 /* FunnelKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		DFDF43CF1C3B405400F75060 /* PFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DFDF43CE1C3B405400F75060 /* PFoundation.framework */; };
-		DFDF43D31C3B40D500F75060 /* FunnelCompletionCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFDF43D21C3B40D500F75060 /* FunnelCompletionCoordinator.swift */; };
+		DFDF43D31C3B40D500F75060 /* FunnelCompletionOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFDF43D21C3B40D500F75060 /* FunnelCompletionOutput.swift */; };
 		DFDF43D51C3B40ED00F75060 /* FunnelStepBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFDF43D41C3B40ED00F75060 /* FunnelStepBase.swift */; };
 		DFDF43D71C3B413A00F75060 /* FunnelStepBaseDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFDF43D61C3B413A00F75060 /* FunnelStepBaseDelegate.swift */; };
 		DFDF43DA1C3B41DB00F75060 /* FunnelStep.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFDF43D91C3B41DB00F75060 /* FunnelStep.swift */; };
@@ -18,11 +20,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		DF53D7FB1C3B93C400DB457E /* FunnelCompletionCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FunnelCompletionCoordinator.swift; sourceTree = "<group>"; };
+		DF53D8031C3B984600DB457E /* FunnelDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FunnelDelegate.swift; sourceTree = "<group>"; };
 		DFDF43C31C3B3FC400F75060 /* FunnelKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = FunnelKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DFDF43C61C3B3FC400F75060 /* FunnelKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FunnelKit.h; sourceTree = "<group>"; };
 		DFDF43C81C3B3FC400F75060 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DFDF43CE1C3B405400F75060 /* PFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PFoundation.framework; path = Carthage/Build/iOS/PFoundation.framework; sourceTree = "<group>"; };
-		DFDF43D21C3B40D500F75060 /* FunnelCompletionCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FunnelCompletionCoordinator.swift; sourceTree = "<group>"; };
+		DFDF43D21C3B40D500F75060 /* FunnelCompletionOutput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FunnelCompletionOutput.swift; sourceTree = "<group>"; };
 		DFDF43D41C3B40ED00F75060 /* FunnelStepBase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FunnelStepBase.swift; sourceTree = "<group>"; };
 		DFDF43D61C3B413A00F75060 /* FunnelStepBaseDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FunnelStepBaseDelegate.swift; sourceTree = "<group>"; };
 		DFDF43D91C3B41DB00F75060 /* FunnelStep.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FunnelStep.swift; sourceTree = "<group>"; };
@@ -67,6 +71,7 @@
 				DFDF43D11C3B40BE00F75060 /* Protocols */,
 				DFDF43C61C3B3FC400F75060 /* FunnelKit.h */,
 				DFDF43C81C3B3FC400F75060 /* Info.plist */,
+				DF53D7FB1C3B93C400DB457E /* FunnelCompletionCoordinator.swift */,
 			);
 			path = FunnelKit;
 			sourceTree = "<group>";
@@ -82,7 +87,8 @@
 		DFDF43D11C3B40BE00F75060 /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
-				DFDF43D21C3B40D500F75060 /* FunnelCompletionCoordinator.swift */,
+				DFDF43D21C3B40D500F75060 /* FunnelCompletionOutput.swift */,
+				DF53D8031C3B984600DB457E /* FunnelDelegate.swift */,
 				DFDF43D41C3B40ED00F75060 /* FunnelStepBase.swift */,
 				DFDF43D61C3B413A00F75060 /* FunnelStepBaseDelegate.swift */,
 			);
@@ -184,7 +190,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DFDF43D31C3B40D500F75060 /* FunnelCompletionCoordinator.swift in Sources */,
+				DF53D7FC1C3B93C400DB457E /* FunnelCompletionCoordinator.swift in Sources */,
+				DFDF43D31C3B40D500F75060 /* FunnelCompletionOutput.swift in Sources */,
+				DF53D8041C3B984600DB457E /* FunnelDelegate.swift in Sources */,
 				DFDF43DF1C3B44C900F75060 /* Funnel.swift in Sources */,
 				DFDF43D71C3B413A00F75060 /* FunnelStepBaseDelegate.swift in Sources */,
 				DFDF43DA1C3B41DB00F75060 /* FunnelStep.swift in Sources */,
