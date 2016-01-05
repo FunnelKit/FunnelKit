@@ -8,7 +8,7 @@
 
 import FunnelKit
 
-class FirstStep: FunnelStepOperation {
+class FirstStep: FunnelStep {
     init() {
         super.init(viewController: FirstStepViewController())
     }
