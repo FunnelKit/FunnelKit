@@ -33,9 +33,9 @@
 		DFDF43B91C3B3FC400F75060 = {
 			isa = PBXGroup;
 			children = (
-				DFDF43D01C3B405900F75060 /* Frameworks */,
 				DFDF43C51C3B3FC400F75060 /* FunnelKit */,
 				DFDF43C41C3B3FC400F75060 /* Products */,
+				DFDF43D01C3B405900F75060 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
