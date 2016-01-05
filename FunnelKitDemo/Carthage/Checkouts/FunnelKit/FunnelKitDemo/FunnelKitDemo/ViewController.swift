@@ -38,11 +38,7 @@ class ViewController: UIViewController {
 
 extension ViewController: FunnelDelegate {
     func funnel(funnel: Funnel, didCompleteWithCoordinatorOutput output: FunnelCompletionOutput?, errors: [NSError]) {
-        guard let output = output else {
-            return
-        }
-        
-        print("Completed funnel with output:\n\(output)")
+        print("Completed funnel with output:\n\(output!)")
     }
     
     func funnel(funnel: Funnel, didCompleteStep step: FunnelStep) {
