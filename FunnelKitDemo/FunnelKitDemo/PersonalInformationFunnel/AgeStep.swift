@@ -23,13 +23,20 @@ class AgeStepViewController: FunnelStepViewController {
             _textField?.translatesAutoresizingMaskIntoConstraints = false
             _textField?.placeholder = "Age"
             _textField?.keyboardType = .NumberPad
+            _textField?.addTarget(self, action: "textFieldDidUpdate", forControlEvents: .EditingChanged)
             
             return _textField!
         }
     }
     
+    func textFieldDidUpdate() {
+        (coordinator as? UserBuilderCoordinator)?.age = Int(textField.text!)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        navigationItem.rightBarButtonItem?.title = "Finish"
         
         view.backgroundColor = .whiteColor()
         
@@ -50,9 +57,4 @@ class AgeStepViewController: FunnelStepViewController {
         textField.heightAnchor.constraintEqualToConstant(40).active = true
     }
     
-    override func nextButtonTapped() {
-        (coordinator as? UserBuilderCoordinator)?.age = Int(textField.text!)
-        
-        super.nextButtonTapped()
-    }
 }

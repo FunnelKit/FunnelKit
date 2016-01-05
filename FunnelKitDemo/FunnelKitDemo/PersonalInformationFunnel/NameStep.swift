@@ -22,13 +22,20 @@ class NameStepViewController: FunnelStepViewController {
             _textField = UITextField()
             _textField?.translatesAutoresizingMaskIntoConstraints = false
             _textField?.placeholder = "First Name"
+            _textField?.addTarget(self, action: "textFieldDidUpdate", forControlEvents: .EditingChanged)
             
             return _textField!
         }
     }
     
+    func textFieldDidUpdate() {
+        (coordinator as? UserBuilderCoordinator)?.firstName = textField.text
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        navigationItem.rightBarButtonItem?.title = "Input Email"
         
         view.backgroundColor = .whiteColor()
         
@@ -47,11 +54,5 @@ class NameStepViewController: FunnelStepViewController {
         textField.leftAnchor.constraintEqualToAnchor(view.leftAnchor, constant: 10).active = true
         textField.rightAnchor.constraintEqualToAnchor(view.rightAnchor, constant: -10).active = true
         textField.heightAnchor.constraintEqualToConstant(40).active = true
-    }
-    
-    override func nextButtonTapped() {
-        (coordinator as? UserBuilderCoordinator)?.firstName = textField.text
-        
-        super.nextButtonTapped()
     }
 }

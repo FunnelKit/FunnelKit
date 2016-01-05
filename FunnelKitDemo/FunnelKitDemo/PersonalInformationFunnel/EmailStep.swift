@@ -22,13 +22,20 @@ class EmailStepViewController: FunnelStepViewController {
             _textField = UITextField()
             _textField?.translatesAutoresizingMaskIntoConstraints = false
             _textField?.placeholder = "Email"
+            _textField?.addTarget(self, action: "textFieldDidUpdate", forControlEvents: .EditingChanged)
             
             return _textField!
         }
     }
     
+    func textFieldDidUpdate() {
+        (coordinator as? UserBuilderCoordinator)?.email = textField.text
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        navigationItem.rightBarButtonItem?.title = "Input Age"
         
         view.backgroundColor = .whiteColor()
         
@@ -49,9 +56,4 @@ class EmailStepViewController: FunnelStepViewController {
         textField.heightAnchor.constraintEqualToConstant(40).active = true
     }
     
-    override func nextButtonTapped() {
-        (coordinator as? UserBuilderCoordinator)?.email = textField.text
-        
-        super.nextButtonTapped()
-    }
 }
