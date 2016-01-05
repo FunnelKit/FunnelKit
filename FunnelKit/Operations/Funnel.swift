@@ -73,6 +73,12 @@ public class Funnel: GroupOperation {
             return
         }
         
+        if nextStep === steps.last {
+            step.viewController?.navigationItem.rightBarButtonItem?.title = "Finish"
+        } else {
+            step.viewController?.navigationItem.rightBarButtonItem?.title = nextStep.title
+        }
+        
         if nextStep.viewController != nil {
             navigationController?.pushViewController(nextStep.viewController!, animated: true)
             delegate?.funnel(self, didStartStep: nextStep)
