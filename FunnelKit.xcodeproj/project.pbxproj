@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		DFDF43C71C3B3FC400F75060 /* FunnelKit.h in Headers */ = {isa = PBXBuildFile; fileRef = DFDF43C61C3B3FC400F75060 /* FunnelKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		DFDF43CF1C3B405400F75060 /* PFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DFDF43CE1C3B405400F75060 /* PFoundation.framework */; };
+		DFDF43D31C3B40D500F75060 /* FunnelCompletionCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFDF43D21C3B40D500F75060 /* FunnelCompletionCoordinator.swift */; };
+		DFDF43D51C3B40ED00F75060 /* FunnelStep.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFDF43D41C3B40ED00F75060 /* FunnelStep.swift */; };
+		DFDF43D71C3B413A00F75060 /* FunnelStepDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFDF43D61C3B413A00F75060 /* FunnelStepDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -16,6 +19,9 @@
 		DFDF43C61C3B3FC400F75060 /* FunnelKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FunnelKit.h; sourceTree = "<group>"; };
 		DFDF43C81C3B3FC400F75060 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DFDF43CE1C3B405400F75060 /* PFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PFoundation.framework; path = Carthage/Build/iOS/PFoundation.framework; sourceTree = "<group>"; };
+		DFDF43D21C3B40D500F75060 /* FunnelCompletionCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FunnelCompletionCoordinator.swift; sourceTree = "<group>"; };
+		DFDF43D41C3B40ED00F75060 /* FunnelStep.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FunnelStep.swift; sourceTree = "<group>"; };
+		DFDF43D61C3B413A00F75060 /* FunnelStepDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FunnelStepDelegate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -50,6 +56,7 @@
 		DFDF43C51C3B3FC400F75060 /* FunnelKit */ = {
 			isa = PBXGroup;
 			children = (
+				DFDF43D11C3B40BE00F75060 /* Protocols */,
 				DFDF43C61C3B3FC400F75060 /* FunnelKit.h */,
 				DFDF43C81C3B3FC400F75060 /* Info.plist */,
 			);
@@ -62,6 +69,16 @@
 				DFDF43CE1C3B405400F75060 /* PFoundation.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		DFDF43D11C3B40BE00F75060 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				DFDF43D21C3B40D500F75060 /* FunnelCompletionCoordinator.swift */,
+				DFDF43D41C3B40ED00F75060 /* FunnelStep.swift */,
+				DFDF43D61C3B413A00F75060 /* FunnelStepDelegate.swift */,
+			);
+			path = Protocols;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -142,6 +159,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DFDF43D31C3B40D500F75060 /* FunnelCompletionCoordinator.swift in Sources */,
+				DFDF43D71C3B413A00F75060 /* FunnelStepDelegate.swift in Sources */,
+				DFDF43D51C3B40ED00F75060 /* FunnelStep.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -240,6 +260,7 @@
 		DFDF43CC1C3B3FC400F75060 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -254,12 +275,14 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.reserbus.FunnelKit;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
 		DFDF43CD1C3B3FC400F75060 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
