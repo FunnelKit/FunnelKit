@@ -1,0 +1,463 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		DF065DA61C3B4D10006ABC37 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF065DA51C3B4D10006ABC37 /* AppDelegate.swift */; };
+		DF065DA81C3B4D10006ABC37 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF065DA71C3B4D10006ABC37 /* ViewController.swift */; };
+		DF065DAB1C3B4D10006ABC37 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DF065DA91C3B4D10006ABC37 /* Main.storyboard */; };
+		DF065DAD1C3B4D10006ABC37 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DF065DAC1C3B4D10006ABC37 /* Assets.xcassets */; };
+		DF065DB01C3B4D10006ABC37 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DF065DAE1C3B4D10006ABC37 /* LaunchScreen.storyboard */; };
+		DF065DBB1C3B4D11006ABC37 /* FunnelKitDemoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF065DBA1C3B4D11006ABC37 /* FunnelKitDemoUITests.swift */; };
+		DF065DC71C3B4D39006ABC37 /* FunnelKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DF065DC51C3B4D39006ABC37 /* FunnelKit.framework */; };
+		DF065DC81C3B4D39006ABC37 /* PFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DF065DC61C3B4D39006ABC37 /* PFoundation.framework */; };
+		DF065DCB1C3B4DB3006ABC37 /* Funnel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF065DCA1C3B4DB3006ABC37 /* Funnel.swift */; };
+		DF065DCD1C3B4F27006ABC37 /* FirstStep.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF065DCC1C3B4F27006ABC37 /* FirstStep.swift */; };
+		DF065DCF1C3B4FA4006ABC37 /* SecondStep.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF065DCE1C3B4FA4006ABC37 /* SecondStep.swift */; };
+		DF065DD11C3B4FF5006ABC37 /* ThirdStep.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF065DD01C3B4FF5006ABC37 /* ThirdStep.swift */; };
+		DF065DD21C3B5075006ABC37 /* FunnelKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DF065DC51C3B4D39006ABC37 /* FunnelKit.framework */; };
+		DF065DD31C3B5075006ABC37 /* FunnelKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = DF065DC51C3B4D39006ABC37 /* FunnelKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		DF065DD41C3B5075006ABC37 /* PFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DF065DC61C3B4D39006ABC37 /* PFoundation.framework */; };
+		DF065DD51C3B5075006ABC37 /* PFoundation.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = DF065DC61C3B4D39006ABC37 /* PFoundation.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		DF065DB71C3B4D11006ABC37 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DF065D9A1C3B4D10006ABC37 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DF065DA11C3B4D10006ABC37;
+			remoteInfo = FunnelKitDemo;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		DF065DD61C3B5075006ABC37 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				DF065DD51C3B5075006ABC37 /* PFoundation.framework in Embed Frameworks */,
+				DF065DD31C3B5075006ABC37 /* FunnelKit.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		DF065DA21C3B4D10006ABC37 /* FunnelKitDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FunnelKitDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		DF065DA51C3B4D10006ABC37 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		DF065DA71C3B4D10006ABC37 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		DF065DAA1C3B4D10006ABC37 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		DF065DAC1C3B4D10006ABC37 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		DF065DAF1C3B4D10006ABC37 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		DF065DB11C3B4D10006ABC37 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DF065DB61C3B4D11006ABC37 /* FunnelKitDemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FunnelKitDemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		DF065DBA1C3B4D11006ABC37 /* FunnelKitDemoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FunnelKitDemoUITests.swift; sourceTree = "<group>"; };
+		DF065DBC1C3B4D11006ABC37 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DF065DC51C3B4D39006ABC37 /* FunnelKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FunnelKit.framework; path = Carthage/Build/iOS/FunnelKit.framework; sourceTree = "<group>"; };
+		DF065DC61C3B4D39006ABC37 /* PFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PFoundation.framework; path = Carthage/Build/iOS/PFoundation.framework; sourceTree = "<group>"; };
+		DF065DCA1C3B4DB3006ABC37 /* Funnel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Funnel.swift; sourceTree = "<group>"; };
+		DF065DCC1C3B4F27006ABC37 /* FirstStep.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirstStep.swift; sourceTree = "<group>"; };
+		DF065DCE1C3B4FA4006ABC37 /* SecondStep.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SecondStep.swift; sourceTree = "<group>"; };
+		DF065DD01C3B4FF5006ABC37 /* ThirdStep.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThirdStep.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		DF065D9F1C3B4D10006ABC37 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DF065DD41C3B5075006ABC37 /* PFoundation.framework in Frameworks */,
+				DF065DC71C3B4D39006ABC37 /* FunnelKit.framework in Frameworks */,
+				DF065DD21C3B5075006ABC37 /* FunnelKit.framework in Frameworks */,
+				DF065DC81C3B4D39006ABC37 /* PFoundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DF065DB31C3B4D11006ABC37 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		DF065D991C3B4D10006ABC37 = {
+			isa = PBXGroup;
+			children = (
+				DF065DA41C3B4D10006ABC37 /* FunnelKitDemo */,
+				DF065DB91C3B4D11006ABC37 /* FunnelKitDemoUITests */,
+				DF065DA31C3B4D10006ABC37 /* Products */,
+				DF065DC91C3B4D3E006ABC37 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		DF065DA31C3B4D10006ABC37 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				DF065DA21C3B4D10006ABC37 /* FunnelKitDemo.app */,
+				DF065DB61C3B4D11006ABC37 /* FunnelKitDemoUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		DF065DA41C3B4D10006ABC37 /* FunnelKitDemo */ = {
+			isa = PBXGroup;
+			children = (
+				DF065DA51C3B4D10006ABC37 /* AppDelegate.swift */,
+				DF065DA71C3B4D10006ABC37 /* ViewController.swift */,
+				DF065DCA1C3B4DB3006ABC37 /* Funnel.swift */,
+				DF065DCC1C3B4F27006ABC37 /* FirstStep.swift */,
+				DF065DCE1C3B4FA4006ABC37 /* SecondStep.swift */,
+				DF065DD01C3B4FF5006ABC37 /* ThirdStep.swift */,
+				DF065DA91C3B4D10006ABC37 /* Main.storyboard */,
+				DF065DAC1C3B4D10006ABC37 /* Assets.xcassets */,
+				DF065DAE1C3B4D10006ABC37 /* LaunchScreen.storyboard */,
+				DF065DB11C3B4D10006ABC37 /* Info.plist */,
+			);
+			path = FunnelKitDemo;
+			sourceTree = "<group>";
+		};
+		DF065DB91C3B4D11006ABC37 /* FunnelKitDemoUITests */ = {
+			isa = PBXGroup;
+			children = (
+				DF065DBA1C3B4D11006ABC37 /* FunnelKitDemoUITests.swift */,
+				DF065DBC1C3B4D11006ABC37 /* Info.plist */,
+			);
+			path = FunnelKitDemoUITests;
+			sourceTree = "<group>";
+		};
+		DF065DC91C3B4D3E006ABC37 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				DF065DC51C3B4D39006ABC37 /* FunnelKit.framework */,
+				DF065DC61C3B4D39006ABC37 /* PFoundation.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		DF065DA11C3B4D10006ABC37 /* FunnelKitDemo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DF065DBF1C3B4D11006ABC37 /* Build configuration list for PBXNativeTarget "FunnelKitDemo" */;
+			buildPhases = (
+				DF065D9E1C3B4D10006ABC37 /* Sources */,
+				DF065D9F1C3B4D10006ABC37 /* Frameworks */,
+				DF065DA01C3B4D10006ABC37 /* Resources */,
+				DF065DD61C3B5075006ABC37 /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = FunnelKitDemo;
+			productName = FunnelKitDemo;
+			productReference = DF065DA21C3B4D10006ABC37 /* FunnelKitDemo.app */;
+			productType = "com.apple.product-type.application";
+		};
+		DF065DB51C3B4D11006ABC37 /* FunnelKitDemoUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DF065DC21C3B4D11006ABC37 /* Build configuration list for PBXNativeTarget "FunnelKitDemoUITests" */;
+			buildPhases = (
+				DF065DB21C3B4D11006ABC37 /* Sources */,
+				DF065DB31C3B4D11006ABC37 /* Frameworks */,
+				DF065DB41C3B4D11006ABC37 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				DF065DB81C3B4D11006ABC37 /* PBXTargetDependency */,
+			);
+			name = FunnelKitDemoUITests;
+			productName = FunnelKitDemoUITests;
+			productReference = DF065DB61C3B4D11006ABC37 /* FunnelKitDemoUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		DF065D9A1C3B4D10006ABC37 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0720;
+				LastUpgradeCheck = 0720;
+				ORGANIZATIONNAME = Reserbus;
+				TargetAttributes = {
+					DF065DA11C3B4D10006ABC37 = {
+						CreatedOnToolsVersion = 7.2;
+					};
+					DF065DB51C3B4D11006ABC37 = {
+						CreatedOnToolsVersion = 7.2;
+						TestTargetID = DF065DA11C3B4D10006ABC37;
+					};
+				};
+			};
+			buildConfigurationList = DF065D9D1C3B4D10006ABC37 /* Build configuration list for PBXProject "FunnelKitDemo" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = DF065D991C3B4D10006ABC37;
+			productRefGroup = DF065DA31C3B4D10006ABC37 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				DF065DA11C3B4D10006ABC37 /* FunnelKitDemo */,
+				DF065DB51C3B4D11006ABC37 /* FunnelKitDemoUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		DF065DA01C3B4D10006ABC37 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DF065DB01C3B4D10006ABC37 /* LaunchScreen.storyboard in Resources */,
+				DF065DAD1C3B4D10006ABC37 /* Assets.xcassets in Resources */,
+				DF065DAB1C3B4D10006ABC37 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DF065DB41C3B4D11006ABC37 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		DF065D9E1C3B4D10006ABC37 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DF065DCF1C3B4FA4006ABC37 /* SecondStep.swift in Sources */,
+				DF065DA81C3B4D10006ABC37 /* ViewController.swift in Sources */,
+				DF065DA61C3B4D10006ABC37 /* AppDelegate.swift in Sources */,
+				DF065DD11C3B4FF5006ABC37 /* ThirdStep.swift in Sources */,
+				DF065DCD1C3B4F27006ABC37 /* FirstStep.swift in Sources */,
+				DF065DCB1C3B4DB3006ABC37 /* Funnel.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DF065DB21C3B4D11006ABC37 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DF065DBB1C3B4D11006ABC37 /* FunnelKitDemoUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		DF065DB81C3B4D11006ABC37 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DF065DA11C3B4D10006ABC37 /* FunnelKitDemo */;
+			targetProxy = DF065DB71C3B4D11006ABC37 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		DF065DA91C3B4D10006ABC37 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DF065DAA1C3B4D10006ABC37 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		DF065DAE1C3B4D10006ABC37 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DF065DAF1C3B4D10006ABC37 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		DF065DBD1C3B4D11006ABC37 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		DF065DBE1C3B4D11006ABC37 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		DF065DC01C3B4D11006ABC37 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
+				INFOPLIST_FILE = FunnelKitDemo/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.reserbus.FunnelKitDemo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		DF065DC11C3B4D11006ABC37 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
+				INFOPLIST_FILE = FunnelKitDemo/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.reserbus.FunnelKitDemo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		DF065DC31C3B4D11006ABC37 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = FunnelKitDemoUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.reserbus.FunnelKitDemoUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = FunnelKitDemo;
+				USES_XCTRUNNER = YES;
+			};
+			name = Debug;
+		};
+		DF065DC41C3B4D11006ABC37 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = FunnelKitDemoUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.reserbus.FunnelKitDemoUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = FunnelKitDemo;
+				USES_XCTRUNNER = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		DF065D9D1C3B4D10006ABC37 /* Build configuration list for PBXProject "FunnelKitDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DF065DBD1C3B4D11006ABC37 /* Debug */,
+				DF065DBE1C3B4D11006ABC37 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DF065DBF1C3B4D11006ABC37 /* Build configuration list for PBXNativeTarget "FunnelKitDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DF065DC01C3B4D11006ABC37 /* Debug */,
+				DF065DC11C3B4D11006ABC37 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		DF065DC21C3B4D11006ABC37 /* Build configuration list for PBXNativeTarget "FunnelKitDemoUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DF065DC31C3B4D11006ABC37 /* Debug */,
+				DF065DC41C3B4D11006ABC37 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = DF065D9A1C3B4D10006ABC37 /* Project object */;
+}
