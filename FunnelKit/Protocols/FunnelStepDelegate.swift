@@ -1,5 +1,5 @@
 
 public protocol FunnelStepDelegate {
     func funnelStepDidComplete(funnelStep: FunnelStep)
-    func funnelStep(funnelStep: FunnelStep, didCompleteWithErrors errors: [NSError])
+    func funnelStep(funnelStep: FunnelStep, didFinishWithErrors errors: [NSError])
 }

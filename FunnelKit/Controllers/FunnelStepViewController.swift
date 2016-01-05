@@ -24,18 +24,16 @@ public class FunnelStepViewController: UIViewController, FunnelStep {
     override public func viewDidLoad() {
         super.viewDidLoad()
         
-        view.backgroundColor = .redColor()
-        
         navigationItem.rightBarButtonItem = nextButton
         navigationItem.leftBarButtonItem = cancelButton
     }
     
-    func cancelButtonTapped() {
+    public func cancelButtonTapped() {
         let error = ErrorSpecification(ec: OperationError.ExecutionFailed)
-        delegate?.funnelStep(self, didCompleteWithErrors: [NSError(error: error)])
+        delegate?.funnelStep(self, didFinishWithErrors: [NSError(error: error)])
     }
     
-    func nextButtonTapped() {
+    public func nextButtonTapped() {
         delegate?.funnelStepDidComplete(self)
     }
 }
