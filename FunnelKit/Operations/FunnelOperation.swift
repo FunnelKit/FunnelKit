@@ -1,11 +1,11 @@
 
 public class FunnelOperation: GroupOperation {
-    public let context: UIViewController?
     public var steps: [NSOperation]
     
+    private var context: UIViewController?
     private var navigationController: UINavigationController?
     
-    public init(context: UIViewController? = nil, funnelSteps: [FunnelStepOperation]) {
+    public init(funnelSteps: [FunnelStepOperation], context: UIViewController? = nil) {
         self.context = context ?? UIApplication.sharedApplication().keyWindow?.rootViewController
         
         steps = funnelSteps
