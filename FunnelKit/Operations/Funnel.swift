@@ -47,6 +47,12 @@ public class Funnel: GroupOperation {
                 return
         }
         
+        if let nextStep = getNextStep(currentStep: firstStep) {
+            root.navigationItem.rightBarButtonItem?.title = nextStep.title != nil ? nextStep.title! : ""
+        } else {
+            root.navigationItem.rightBarButtonItem?.title = "Finish"
+        }
+        
         navigationController = UINavigationController(rootViewController: root)
         context?.presentViewController(navigationController!, animated: true, completion: nil)
         
@@ -62,17 +68,10 @@ public class Funnel: GroupOperation {
         delegate?.funnel(self, didCompleteStep: step)
         coordinator = step.coordinator
         
-        guard let nextIndex = steps.indexOf(step)?.successor() where nextIndex < steps.count - 1 else {
+        guard let nextStep = getNextStep(currentStep: step) else {
             finish()
             return
         }
-        
-        guard let nextStep = steps[nextIndex] as? FunnelStep else {
-            finish()
-            return
-        }
-        
-        nextStep.coordinator = coordinator
         
         if nextStep.viewController != nil {
             navigationController?.pushViewController(nextStep.viewController!, animated: true)
@@ -80,5 +79,19 @@ public class Funnel: GroupOperation {
         } else {
             finish()
         }
+    }
+}
+
+extension Funnel {
+    private func getNextStep(currentStep step: FunnelStep) -> FunnelStep? {
+        guard let nextIndex = steps.indexOf(step)?.successor() where nextIndex < steps.count - 1 else {
+            return nil
+        }
+        
+        guard let nextStep = steps[nextIndex] as? FunnelStep else {
+            return nil
+        }
+        
+        return nextStep
     }
 }

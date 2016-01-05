@@ -1,7 +1,8 @@
 
 public class FunnelStep: Operation {
+    public var title: String?
     public let viewController: FunnelStepViewController?
-    var coordinator: FunnelCompletionCoordinator? {
+    public var coordinator: FunnelCompletionCoordinator? {
         get {
             return viewController?.coordinator
         }
