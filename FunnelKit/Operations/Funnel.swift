@@ -1,11 +1,11 @@
 
-public class FunnelOperation: GroupOperation {
+public class Funnel: GroupOperation {
     public var steps: [NSOperation]
     
     private var context: UIViewController?
     private var navigationController: UINavigationController?
     
-    public init(funnelSteps: [FunnelStepOperation], context: UIViewController? = nil) {
+    public init(funnelSteps: [FunnelStep], context: UIViewController? = nil) {
         self.context = context ?? UIApplication.sharedApplication().keyWindow?.rootViewController
         
         steps = funnelSteps
@@ -27,7 +27,7 @@ public class FunnelOperation: GroupOperation {
     public override func execute() {
         super.execute()
         
-        guard let root = steps.flatMap({ $0 as? FunnelStepOperation }).first?.viewController else {
+        guard let root = steps.flatMap({ $0 as? FunnelStep }).first?.viewController else {
             finish()
             return
         }
@@ -37,7 +37,7 @@ public class FunnelOperation: GroupOperation {
     }
     
     public override func operationDidFinish(operation: NSOperation, withErrors errors: [NSError]) {
-        guard let step = operation as? FunnelStepOperation where errors.count == 0 else {
+        guard let step = operation as? FunnelStep where errors.count == 0 else {
             finish(errors)
             return
         }
@@ -47,7 +47,7 @@ public class FunnelOperation: GroupOperation {
             return
         }
         
-        guard let nextStep = steps[nextIndex] as? FunnelStepOperation else {
+        guard let nextStep = steps[nextIndex] as? FunnelStep else {
             finish()
             return
         }

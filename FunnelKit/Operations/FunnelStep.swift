@@ -1,5 +1,5 @@
 
-public class FunnelStepOperation: Operation {
+public class FunnelStep: Operation {
     public let viewController: FunnelStepViewController?
     var coordinator: FunnelCompletionCoordinator? {
         get {
@@ -26,12 +26,12 @@ public class FunnelStepOperation: Operation {
     }
 }
 
-extension FunnelStepOperation: FunnelStepDelegate {
-    public func funnelStep(funnelStep: FunnelStep, didFinishWithErrors errors: [NSError]) {
+extension FunnelStep: FunnelStepBaseDelegate {
+    public func funnelStepBase(funnelStepBase: FunnelStepBase, didFinishWithErrors errors: [NSError]) {
         finish(errors)
     }
     
-    public func funnelStepDidComplete(funnelStep: FunnelStep) {
+    public func funnelStepBaseDidComplete(funnelStep: FunnelStepBase) {
         finish()
     }
 }

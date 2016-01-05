@@ -1,6 +1,6 @@
 
-public class FunnelStepViewController: UIViewController, FunnelStep {
-    public var delegate: FunnelStepDelegate?
+public class FunnelStepViewController: UIViewController, FunnelStepBase {
+    public var delegate: FunnelStepBaseDelegate?
     public var coordinator: FunnelCompletionCoordinator?
     
     private var _cancelButton: UIBarButtonItem?
@@ -30,10 +30,10 @@ public class FunnelStepViewController: UIViewController, FunnelStep {
     
     public func cancelButtonTapped() {
         let error = ErrorSpecification(ec: OperationError.ExecutionFailed)
-        delegate?.funnelStep(self, didFinishWithErrors: [NSError(error: error)])
+        delegate?.funnelStepBase(self, didFinishWithErrors: [NSError(error: error)])
     }
     
     public func nextButtonTapped() {
-        delegate?.funnelStepDidComplete(self)
+        delegate?.funnelStepBaseDidComplete(self)
     }
 }
