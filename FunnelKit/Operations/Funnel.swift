@@ -74,6 +74,8 @@ public class Funnel: GroupOperation {
             return
         }
         
+        nextStep.coordinator = coordinator
+        
         if nextStep.viewController != nil {
             navigationController?.pushViewController(nextStep.viewController!, animated: true)
             delegate?.funnel(self, didStartStep: nextStep)
