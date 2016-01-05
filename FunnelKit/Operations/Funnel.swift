@@ -47,14 +47,14 @@ public class Funnel: GroupOperation {
                 return
         }
         
-        if let nextStep = getNextStep(currentStep: firstStep) {
-            root.navigationItem.rightBarButtonItem?.title = nextStep.title
-        } else {
-            root.navigationItem.rightBarButtonItem?.title = "Finish"
-        }
-        
         navigationController = UINavigationController(rootViewController: root)
-        context?.presentViewController(navigationController!, animated: true, completion: nil)
+        context?.presentViewController(navigationController!, animated: true, completion: {
+            if let nextStep = self.getNextStep(currentStep: firstStep) {
+                root.navigationItem.rightBarButtonItem?.title = nextStep.title
+            } else {
+                root.navigationItem.rightBarButtonItem?.title = "Finish"
+            }
+        })
         
         delegate?.funnel(self, didStartStep: firstStep)
     }
@@ -73,14 +73,15 @@ public class Funnel: GroupOperation {
             return
         }
         
-        if nextStep === steps.last {
-            step.viewController?.navigationItem.rightBarButtonItem?.title = "Finish"
-        } else {
-            step.viewController?.navigationItem.rightBarButtonItem?.title = nextStep.title
-        }
-        
         if nextStep.viewController != nil {
             navigationController?.pushViewController(nextStep.viewController!, animated: true)
+            if let nextNextStep = getNextStep(currentStep: nextStep) {
+                if nextNextStep === steps.last {
+                    nextStep.viewController?.navigationItem.rightBarButtonItem?.title = "Finish"
+                } else {
+                    nextStep.viewController?.navigationItem.rightBarButtonItem?.title = nextNextStep.title
+                }
+            }
             delegate?.funnel(self, didStartStep: nextStep)
         } else {
             finish()
