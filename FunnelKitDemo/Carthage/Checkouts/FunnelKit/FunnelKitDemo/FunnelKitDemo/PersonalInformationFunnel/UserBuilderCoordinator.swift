@@ -14,10 +14,6 @@ class UserBuilderCoordinator: FunnelCompletionCoordinator {
     var age: Int?
     
     override func generateOutput() -> FunnelCompletionOutput? {
-        print("\(firstName)")
-        print("\(email)")
-        print("\(age)")
-        
         guard
             let name  = firstName,
             let email = email,

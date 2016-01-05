@@ -22,7 +22,6 @@
 		DF53D7FE1C3B94E200DB457E /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF53D7FD1C3B94E200DB457E /* User.swift */; };
 		DF53D8001C3B966E00DB457E /* EmailStep.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF53D7FF1C3B966E00DB457E /* EmailStep.swift */; };
 		DF53D8021C3B969C00DB457E /* AgeStep.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF53D8011C3B969C00DB457E /* AgeStep.swift */; };
-		DFE2E5131C3BAAC600C3C92D /* PersonalInformationFunnelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFE2E5121C3BAAC600C3C92D /* PersonalInformationFunnelViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,7 +67,6 @@
 		DF53D7FD1C3B94E200DB457E /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		DF53D7FF1C3B966E00DB457E /* EmailStep.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmailStep.swift; sourceTree = "<group>"; };
 		DF53D8011C3B969C00DB457E /* AgeStep.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AgeStep.swift; sourceTree = "<group>"; };
-		DFE2E5121C3BAAC600C3C92D /* PersonalInformationFunnelViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonalInformationFunnelViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -146,7 +144,6 @@
 			children = (
 				DF53D7F51C3B8B2C00DB457E /* PersonalInformationFunnel.swift */,
 				DF53D7F91C3B8C6D00DB457E /* UserBuilderCoordinator.swift */,
-				DFE2E5121C3BAAC600C3C92D /* PersonalInformationFunnelViewController.swift */,
 				DF53D7F71C3B8B8500DB457E /* NameStep.swift */,
 				DF53D7FF1C3B966E00DB457E /* EmailStep.swift */,
 				DF53D8011C3B969C00DB457E /* AgeStep.swift */,
@@ -262,7 +259,6 @@
 				DF53D7FE1C3B94E200DB457E /* User.swift in Sources */,
 				DF53D7FA1C3B8C6D00DB457E /* UserBuilderCoordinator.swift in Sources */,
 				DF53D8001C3B966E00DB457E /* EmailStep.swift in Sources */,
-				DFE2E5131C3BAAC600C3C92D /* PersonalInformationFunnelViewController.swift in Sources */,
 				DF53D7F81C3B8B8500DB457E /* NameStep.swift in Sources */,
 				DF53D7CD1C3B894F00DB457E /* AppDelegate.swift in Sources */,
 			);

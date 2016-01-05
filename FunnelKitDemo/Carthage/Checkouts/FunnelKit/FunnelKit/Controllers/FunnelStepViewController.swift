@@ -1,0 +1,43 @@
+
+public class FunnelStepViewController: UIViewController, FunnelStepBase {
+    public var delegate: FunnelStepBaseDelegate?
+    public var coordinator: FunnelCompletionCoordinator?
+    
+    private var _cancelButton: UIBarButtonItem?
+    private var cancelButton: UIBarButtonItem {
+        if let c = _cancelButton { return c } else {
+            _cancelButton = UIBarButtonItem(title: "Cancel", style: .Done, target: self, action: "cancelButtonTapped")
+            
+            return _cancelButton!
+        }
+    }
+    
+    private var _nextButton: UIBarButtonItem?
+    private var nextButton: UIBarButtonItem {
+        if let n = _nextButton { return n } else {
+            _nextButton = UIBarButtonItem(title: "Next", style: .Done, target: self, action: "nextButtonTapped")
+            
+            return _nextButton!
+        }
+    }
+    
+    override public func viewDidLoad() {
+        super.viewDidLoad()
+        
+        navigationItem.leftBarButtonItem = cancelButton
+    }
+    
+    public func cancelButtonTapped() {
+        let error = ErrorSpecification(ec: OperationError.ExecutionFailed)
+        delegate?.funnelStepBase(self, didFinishWithErrors: [NSError(error: error)])
+    }
+    
+    public func nextButtonTapped() {
+        delegate?.funnelStepBaseDidComplete(self)
+    }
+    
+    public func setRightButtonTitle(newTitle title: String) {
+        navigationItem.rightBarButtonItem = nextButton
+        navigationItem.rightBarButtonItem?.title = title
+    }
+}
