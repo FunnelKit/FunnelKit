@@ -14,6 +14,7 @@
 		DFDF43D71C3B413A00F75060 /* FunnelStepDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFDF43D61C3B413A00F75060 /* FunnelStepDelegate.swift */; };
 		DFDF43DA1C3B41DB00F75060 /* FunnelStepOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFDF43D91C3B41DB00F75060 /* FunnelStepOperation.swift */; };
 		DFDF43DD1C3B424800F75060 /* FunnelStepViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFDF43DC1C3B424800F75060 /* FunnelStepViewController.swift */; };
+		DFDF43DF1C3B44C900F75060 /* FunnelOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFDF43DE1C3B44C900F75060 /* FunnelOperation.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		DFDF43D61C3B413A00F75060 /* FunnelStepDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FunnelStepDelegate.swift; sourceTree = "<group>"; };
 		DFDF43D91C3B41DB00F75060 /* FunnelStepOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FunnelStepOperation.swift; sourceTree = "<group>"; };
 		DFDF43DC1C3B424800F75060 /* FunnelStepViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FunnelStepViewController.swift; sourceTree = "<group>"; };
+		DFDF43DE1C3B44C900F75060 /* FunnelOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FunnelOperation.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,6 +93,7 @@
 			isa = PBXGroup;
 			children = (
 				DFDF43D91C3B41DB00F75060 /* FunnelStepOperation.swift */,
+				DFDF43DE1C3B44C900F75060 /* FunnelOperation.swift */,
 			);
 			path = Operations;
 			sourceTree = "<group>";
@@ -182,6 +185,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DFDF43D31C3B40D500F75060 /* FunnelCompletionCoordinator.swift in Sources */,
+				DFDF43DF1C3B44C900F75060 /* FunnelOperation.swift in Sources */,
 				DFDF43D71C3B413A00F75060 /* FunnelStepDelegate.swift in Sources */,
 				DFDF43DA1C3B41DB00F75060 /* FunnelStepOperation.swift in Sources */,
 				DFDF43DD1C3B424800F75060 /* FunnelStepViewController.swift in Sources */,
