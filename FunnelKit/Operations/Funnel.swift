@@ -27,7 +27,7 @@ public class Funnel: GroupOperation {
     public override func finish(errors: [NSError] = []) {
         executeOnMainThread {
             self.context?.dismissViewControllerAnimated(true) {
-                self.delegate?.funel(self,
+                self.delegate?.funnel(self,
                     didCompleteWithCoordinatorOutput: self.coordinator?.generateOutput(),
                     errors: errors
                 )
