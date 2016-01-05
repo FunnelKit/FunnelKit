@@ -13,15 +13,22 @@ public class Funnel: GroupOperation {
         steps = funnelSteps
         steps.append(NSBlockOperation(block: {}))
         
+        super.init(operations: steps)
+        
         for (index, step) in steps.flatMap({$0 as? FunnelStep}).enumerate() {
             if index == 0 {
                 step.coordinator = coordinatorType.init()
             } else {
-                step.addDependency(funnelSteps[index - 1])
+                step.addDependency(steps[index - 1])
             }
+            
+            guard let nextStep = getNextStep(currentStep: step) else {
+                step.viewController?.setRightButtonTitle(newTitle: "Finish")
+                continue
+            }
+            
+            step.viewController?.setRightButtonTitle(newTitle: nextStep.title)
         }
-        
-        super.init(operations: steps)
     }
     
     public override func finish(errors: [NSError] = []) {
@@ -48,13 +55,7 @@ public class Funnel: GroupOperation {
         }
         
         navigationController = UINavigationController(rootViewController: root)
-        context?.presentViewController(navigationController!, animated: true, completion: {
-            if let nextStep = self.getNextStep(currentStep: firstStep) {
-                root.navigationItem.rightBarButtonItem = self.customBarButtonItemForTarget(root, title: nextStep.title)
-            } else {
-                root.navigationItem.rightBarButtonItem = self.customBarButtonItemForTarget(root, title: "Finish")
-            }
-        })
+        context?.presentViewController(navigationController!, animated: true, completion:nil)
         
         delegate?.funnel(self, didStartStep: firstStep)
     }
@@ -75,23 +76,10 @@ public class Funnel: GroupOperation {
         
         if nextStep.viewController != nil {
             navigationController?.pushViewController(nextStep.viewController!, animated: true)
-            if let nextNextStep = getNextStep(currentStep: nextStep) {
-                if nextNextStep === steps.last {
-                    nextStep.viewController?.navigationItem.rightBarButtonItem = customBarButtonItemForTarget(nextStep.viewController!, title: "Finish")
-                } else {
-                    nextStep.viewController?.navigationItem.rightBarButtonItem? = customBarButtonItemForTarget(nextStep.viewController!, title: nextNextStep.title)
-                }
-            } else {
-                nextStep.viewController?.navigationItem.rightBarButtonItem = customBarButtonItemForTarget(nextStep.viewController!, title: "Finish")
-            }
             delegate?.funnel(self, didStartStep: nextStep)
         } else {
             finish()
         }
-    }
-    
-    func customBarButtonItemForTarget(target: AnyObject, title: String) -> UIBarButtonItem {
-        return UIBarButtonItem(title: title, style: .Done, target: target, action: "nextButtonTapped")
     }
 }
 

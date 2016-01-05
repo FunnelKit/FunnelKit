@@ -24,7 +24,6 @@ public class FunnelStepViewController: UIViewController, FunnelStepBase {
     override public func viewDidLoad() {
         super.viewDidLoad()
         
-        navigationItem.rightBarButtonItem = nextButton
         navigationItem.leftBarButtonItem = cancelButton
     }
     
@@ -35,5 +34,10 @@ public class FunnelStepViewController: UIViewController, FunnelStepBase {
     
     public func nextButtonTapped() {
         delegate?.funnelStepBaseDidComplete(self)
+    }
+    
+    public func setRightButtonTitle(newTitle title: String) {
+        navigationItem.rightBarButtonItem = nextButton
+        navigationItem.rightBarButtonItem?.title = title
     }
 }
