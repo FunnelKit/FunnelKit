@@ -8,12 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		DFDF43C71C3B3FC400F75060 /* FunnelKit.h in Headers */ = {isa = PBXBuildFile; fileRef = DFDF43C61C3B3FC400F75060 /* FunnelKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DFDF43CF1C3B405400F75060 /* PFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DFDF43CE1C3B405400F75060 /* PFoundation.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		DFDF43C31C3B3FC400F75060 /* FunnelKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = FunnelKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DFDF43C61C3B3FC400F75060 /* FunnelKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FunnelKit.h; sourceTree = "<group>"; };
 		DFDF43C81C3B3FC400F75060 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DFDF43CE1C3B405400F75060 /* PFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PFoundation.framework; path = Carthage/Build/iOS/PFoundation.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -21,6 +23,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DFDF43CF1C3B405400F75060 /* PFoundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -30,6 +33,7 @@
 		DFDF43B91C3B3FC400F75060 = {
 			isa = PBXGroup;
 			children = (
+				DFDF43D01C3B405900F75060 /* Frameworks */,
 				DFDF43C51C3B3FC400F75060 /* FunnelKit */,
 				DFDF43C41C3B3FC400F75060 /* Products */,
 			);
@@ -50,6 +54,14 @@
 				DFDF43C81C3B3FC400F75060 /* Info.plist */,
 			);
 			path = FunnelKit;
+			sourceTree = "<group>";
+		};
+		DFDF43D01C3B405900F75060 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				DFDF43CE1C3B405400F75060 /* PFoundation.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -232,6 +244,10 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = FunnelKit/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -248,6 +264,10 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = FunnelKit/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
