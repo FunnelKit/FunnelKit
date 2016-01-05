@@ -1,6 +1,6 @@
 
 public class FunnelStep: Operation {
-    public var title: String?
+    public let title: String?
     public let viewController: FunnelStepViewController?
     public var coordinator: FunnelCompletionCoordinator? {
         get {
@@ -13,6 +13,7 @@ public class FunnelStep: Operation {
     }
     
     public init(viewController: FunnelStepViewController) {
+        self.title = "\(self.dynamicType)"
         self.viewController = viewController
     }
     
