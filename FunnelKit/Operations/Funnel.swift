@@ -1,6 +1,8 @@
 
 public class Funnel: GroupOperation {
     public var steps: [NSOperation]
+    public var delegate: FunnelDelegate?
+    public var coordinator: FunnelCompletionCoordinator?
     
     private var context: UIViewController?
     private var navigationController: UINavigationController?
@@ -24,7 +26,13 @@ public class Funnel: GroupOperation {
     
     public override func finish(errors: [NSError] = []) {
         executeOnMainThread {
-            self.context?.dismissViewControllerAnimated(true, completion: { super.finish(errors) })
+            self.context?.dismissViewControllerAnimated(true) {
+                self.delegate?.funel(self,
+                    didCompleteWithCoordinatorOutput: self.coordinator?.generateOutput(),
+                    errors: errors
+                )
+                super.finish(errors)
+            }
         }
     }
     
@@ -46,6 +54,8 @@ public class Funnel: GroupOperation {
             return
         }
         
+        coordinator = step.coordinator
+        
         guard let nextIndex = steps.indexOf(step)?.successor() where nextIndex < steps.count - 1 else {
             finish()
             return
@@ -56,7 +66,8 @@ public class Funnel: GroupOperation {
             return
         }
         
-        nextStep.coordinator = step.coordinator
+        nextStep.coordinator = coordinator
+        
         if nextStep.viewController != nil {
             navigationController?.pushViewController(nextStep.viewController!, animated: true)
         }
