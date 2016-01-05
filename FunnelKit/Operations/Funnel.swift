@@ -39,13 +39,18 @@ public class Funnel: GroupOperation {
     public override func execute() {
         super.execute()
         
-        guard let root = steps.flatMap({ $0 as? FunnelStep }).first?.viewController else {
-            finish()
-            return
+        guard
+            let firstStep = steps.flatMap({$0 as? FunnelStep }).first,
+            let root = firstStep.viewController
+            else {
+                finish()
+                return
         }
         
         navigationController = UINavigationController(rootViewController: root)
         context?.presentViewController(navigationController!, animated: true, completion: nil)
+        
+        delegate?.funnel(self, didStartStep: firstStep)
     }
     
     public override func operationDidFinish(operation: NSOperation, withErrors errors: [NSError]) {
