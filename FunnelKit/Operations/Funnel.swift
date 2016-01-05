@@ -48,7 +48,7 @@ public class Funnel: GroupOperation {
         }
         
         if let nextStep = getNextStep(currentStep: firstStep) {
-            root.navigationItem.rightBarButtonItem?.title = nextStep.title != nil ? nextStep.title! : ""
+            root.navigationItem.rightBarButtonItem?.title = nextStep.title
         } else {
             root.navigationItem.rightBarButtonItem?.title = "Finish"
         }
