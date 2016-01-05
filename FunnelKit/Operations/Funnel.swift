@@ -50,9 +50,9 @@ public class Funnel: GroupOperation {
         navigationController = UINavigationController(rootViewController: root)
         context?.presentViewController(navigationController!, animated: true, completion: {
             if let nextStep = self.getNextStep(currentStep: firstStep) {
-                root.navigationItem.rightBarButtonItem?.title = nextStep.title
+                root.navigationItem.rightBarButtonItem = self.customBarButtonItemForTarget(root, title: nextStep.title)
             } else {
-                root.navigationItem.rightBarButtonItem?.title = "Finish"
+                root.navigationItem.rightBarButtonItem = self.customBarButtonItemForTarget(root, title: "Finish")
             }
         })
         
@@ -77,15 +77,21 @@ public class Funnel: GroupOperation {
             navigationController?.pushViewController(nextStep.viewController!, animated: true)
             if let nextNextStep = getNextStep(currentStep: nextStep) {
                 if nextNextStep === steps.last {
-                    nextStep.viewController?.navigationItem.rightBarButtonItem?.title = "Finish"
+                    nextStep.viewController?.navigationItem.rightBarButtonItem = customBarButtonItemForTarget(nextStep.viewController!, title: "Finish")
                 } else {
-                    nextStep.viewController?.navigationItem.rightBarButtonItem?.title = nextNextStep.title
+                    nextStep.viewController?.navigationItem.rightBarButtonItem? = customBarButtonItemForTarget(nextStep.viewController!, title: nextNextStep.title)
                 }
+            } else {
+                nextStep.viewController?.navigationItem.rightBarButtonItem = customBarButtonItemForTarget(nextStep.viewController!, title: "Finish")
             }
             delegate?.funnel(self, didStartStep: nextStep)
         } else {
             finish()
         }
+    }
+    
+    func customBarButtonItemForTarget(target: AnyObject, title: String) -> UIBarButtonItem {
+        return UIBarButtonItem(title: title, style: .Done, target: target, action: "nextButtonTapped")
     }
 }
 
