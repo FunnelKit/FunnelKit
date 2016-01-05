@@ -54,6 +54,7 @@ public class Funnel: GroupOperation {
             return
         }
         
+        delegate?.funnel(self, didCompleteStep: step)
         coordinator = step.coordinator
         
         guard let nextIndex = steps.indexOf(step)?.successor() where nextIndex < steps.count - 1 else {
@@ -70,6 +71,9 @@ public class Funnel: GroupOperation {
         
         if nextStep.viewController != nil {
             navigationController?.pushViewController(nextStep.viewController!, animated: true)
+            delegate?.funnel(self, didStartStep: nextStep)
+        } else {
+            finish()
         }
     }
 }
