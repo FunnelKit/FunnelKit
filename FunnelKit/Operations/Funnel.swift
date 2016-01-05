@@ -5,14 +5,18 @@ public class Funnel: GroupOperation {
     private var context: UIViewController?
     private var navigationController: UINavigationController?
     
-    public init(funnelSteps: [FunnelStep], context: UIViewController? = nil) {
+    public init<T: FunnelCompletionCoordinator>(coordinatorType: T.Type, funnelSteps: [FunnelStep], context: UIViewController? = nil) {
         self.context = context ?? UIApplication.sharedApplication().keyWindow?.rootViewController
         
         steps = funnelSteps
         steps.append(NSBlockOperation(block: {}))
         
-        for (index, step) in steps.enumerate() where step !== steps.first! {
-            step.addDependency(funnelSteps[index - 1])
+        for (index, step) in steps.flatMap({$0 as? FunnelStep}).enumerate() {
+            if index == 0 {
+                step.coordinator = coordinatorType.init()
+            } else {
+                step.addDependency(funnelSteps[index - 1])
+            }
         }
         
         super.init(operations: steps)
