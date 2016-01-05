@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <PFoundation/PFoundation.h>
 
 //! Project version number for FunnelKit.
 FOUNDATION_EXPORT double FunnelKitVersionNumber;
