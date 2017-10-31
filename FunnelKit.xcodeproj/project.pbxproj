@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DF25014F1FA9273A00BD681A /* FunnelStep.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF25014E1FA9273A00BD681A /* FunnelStep.swift */; };
+		DF2501511FA9283100BD681A /* FunnelStepDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF2501501FA9283100BD681A /* FunnelStepDelegate.swift */; };
+		DF2501531FA9284700BD681A /* FunnelOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF2501521FA9284700BD681A /* FunnelOutput.swift */; };
 		DF3F87FE1FA926F100198A12 /* FunnelKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DF3F87F41FA926F000198A12 /* FunnelKit.framework */; };
 		DF3F88031FA926F100198A12 /* FunnelKitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF3F88021FA926F100198A12 /* FunnelKitTests.swift */; };
 		DF3F88051FA926F100198A12 /* FunnelKit.h in Headers */ = {isa = PBXBuildFile; fileRef = DF3F87F71FA926F000198A12 /* FunnelKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -23,6 +26,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		DF25014E1FA9273A00BD681A /* FunnelStep.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FunnelStep.swift; sourceTree = "<group>"; };
+		DF2501501FA9283100BD681A /* FunnelStepDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FunnelStepDelegate.swift; sourceTree = "<group>"; };
+		DF2501521FA9284700BD681A /* FunnelOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FunnelOutput.swift; sourceTree = "<group>"; };
 		DF3F87F41FA926F000198A12 /* FunnelKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = FunnelKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DF3F87F71FA926F000198A12 /* FunnelKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FunnelKit.h; sourceTree = "<group>"; };
 		DF3F87F81FA926F000198A12 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -50,6 +56,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		DF25014D1FA9272700BD681A /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				DF25014E1FA9273A00BD681A /* FunnelStep.swift */,
+				DF2501521FA9284700BD681A /* FunnelOutput.swift */,
+				DF2501501FA9283100BD681A /* FunnelStepDelegate.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
 		DF3F87EA1FA926F000198A12 = {
 			isa = PBXGroup;
 			children = (
@@ -71,6 +87,7 @@
 		DF3F87F61FA926F000198A12 /* FunnelKit */ = {
 			isa = PBXGroup;
 			children = (
+				DF25014D1FA9272700BD681A /* Protocols */,
 				DF3F87F71FA926F000198A12 /* FunnelKit.h */,
 				DF3F87F81FA926F000198A12 /* Info.plist */,
 			);
@@ -148,6 +165,7 @@
 				TargetAttributes = {
 					DF3F87F31FA926F000198A12 = {
 						CreatedOnToolsVersion = 9.0.1;
+						LastSwiftMigration = 0900;
 						ProvisioningStyle = Automatic;
 					};
 					DF3F87FC1FA926F100198A12 = {
@@ -196,6 +214,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DF2501511FA9283100BD681A /* FunnelStepDelegate.swift in Sources */,
+				DF25014F1FA9273A00BD681A /* FunnelStep.swift in Sources */,
+				DF2501531FA9284700BD681A /* FunnelOutput.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -334,6 +355,7 @@
 		DF3F88091FA926F100198A12 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
@@ -347,6 +369,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = io.funnelkit.FunnelKit;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -355,6 +378,7 @@
 		DF3F880A1FA926F100198A12 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
@@ -376,6 +400,7 @@
 		DF3F880C1FA926F100198A12 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 3BVQ3MVDQR;
 				INFOPLIST_FILE = FunnelKitTests/Info.plist;
@@ -390,6 +415,7 @@
 		DF3F880D1FA926F100198A12 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 3BVQ3MVDQR;
 				INFOPLIST_FILE = FunnelKitTests/Info.plist;
