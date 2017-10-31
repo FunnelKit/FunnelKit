@@ -17,4 +17,3 @@ public class Funnel {
         self.delegate = delegate
     }
 }
-
